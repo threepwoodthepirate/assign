@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+/* @import "tailwindcss/components"; */
+@tailwind base;
+
+@layer base {
+  *:focus {
+    @apply outline-none;
+  }
+
+  ::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 4px;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+  }
+
+  html,
+  body {
+    @apply w-full h-full;
+    @apply bg-white;
+    @apply text-slate-900 dark:text-white;
+  }
+
+  p {
+    @apply text-xs mt-5 tracking-tight;
+    @apply font-poppins;
+  }
+
+  h1 {
+    @apply tracking-tight;
+  }
+
+  h2 {
+    @apply text-base tracking-tight;
+  }
+
+  h3 {
+    @apply text-xs tracking-tight;
+    @apply font-poppins;
+  }
+}
+
+@tailwind components;
+@tailwind utilities;
