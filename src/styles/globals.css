@@ -20,8 +20,8 @@
   html,
   body {
     @apply w-full h-full;
-    @apply bg-white;
-    @apply text-slate-900 dark:text-white;
+    @apply bg-slate-700;
+    @apply text-white;
   }
 
   p {
