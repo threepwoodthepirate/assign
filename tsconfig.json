@@ -20,6 +20,12 @@
       "@/pages/*": ["pages/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/mocks/index.js",
+    "src/mocks/server.js"
+  ],
   "exclude": ["node_modules"]
 }

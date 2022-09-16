@@ -3,7 +3,8 @@ import type { NextPage } from "next";
 import { UsersProps } from "@/features/Users/props";
 import PageLayout from "@/components/Layout/PageLayout";
 
-export const Home: NextPage<UsersProps> = () => {
+export const Home: NextPage<UsersProps> = ({ userList }) => {
+  console.log(userList.length);
   return (
     <PageLayout>
       <div className="h-full">
