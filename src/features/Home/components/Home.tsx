@@ -5,8 +5,24 @@ import PageLayout from "@/components/Layout/PageLayout";
 import { UserCards } from "@/features/Users/components";
 import { Logo } from "@/components/Logo";
 import SearchBar from "@/components/SearchBar/SearchBar";
+import { ChangeEvent, useRef, useState } from "react";
+import { useFilter } from "@/hooks/useFilter";
 
 export const Home: NextPage<UsersProps> = ({ userList }) => {
+  const searchRef = useRef(
+    null
+  ) as React.MutableRefObject<HTMLInputElement | null>;
+
+  const [query, setQuery] = useState<String>("");
+  const userFilteredList = useFilter(userList, query);
+
+  const handleInputChange = (
+    event: React.ChangeEvent<HTMLInputElement> | undefined
+  ) => {
+    const queryValue = event?.target.value;
+    setQuery(queryValue ?? "");
+  };
+
   console.log(userList.length);
   return (
     <PageLayout>
@@ -17,13 +33,20 @@ export const Home: NextPage<UsersProps> = ({ userList }) => {
           <button
             title="Show users in a plain list and grid list"
             // onClick={}
-            className="h-10 px-4 text-sm font-normal text-white transition duration-300 ease-in bg-blue-600 rounded-md shadow-xl  font-poppins hover:text-blue-100 hover:bg-blue-600"
+            className="h-10 px-4 text-sm font-normal text-white transition duration-300 ease-in bg-blue-600 rounded-md shadow-xl font-poppins hover:text-blue-100 hover:bg-blue-600"
           >
             Toggle listview
           </button>
         </div>
-        <SearchBar disabled={false}></SearchBar>
-        <UserCards userFilteredList={userList}></UserCards>
+        <SearchBar
+          disabled={false}
+          searchRef={searchRef}
+          handleSearch={handleInputChange}
+        ></SearchBar>
+        <UserCards userFilteredList={userFilteredList}></UserCards>
+        {(!userFilteredList || userFilteredList.length == 0) && (
+          <h3>Sorry, no users found. Try a different name.</h3>
+        )}
       </div>
     </PageLayout>
   );
