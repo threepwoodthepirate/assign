@@ -3,7 +3,6 @@ import { SearchProps } from "./props";
 
 const SearchBar: React.FC<SearchProps> = ({
   handleSearch,
-  searchRef,
   disabled = false,
 }) => {
   return (
@@ -15,7 +14,6 @@ const SearchBar: React.FC<SearchProps> = ({
       <input
         autoComplete="off"
         disabled={disabled}
-        ref={searchRef}
         onChange={handleSearch}
         name="search"
         placeholder="Search by name.."

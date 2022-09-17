@@ -11,10 +11,6 @@ import { useToggle } from "@/hooks/useToggle";
 import { UserList } from "@/features/Users/components/UserList";
 
 export const Home: NextPage<UsersProps> = ({ userList }) => {
-  const searchRef = useRef(
-    null
-  ) as React.MutableRefObject<HTMLInputElement | null>;
-
   const [query, setQuery] = useState<String>("");
   const userFilteredList = useFilter(userList, query);
   const { showGrid, toggle } = useToggle();
@@ -42,7 +38,6 @@ export const Home: NextPage<UsersProps> = ({ userList }) => {
         </div>
         <SearchBar
           disabled={false}
-          searchRef={searchRef}
           handleSearch={handleInputChange}
         ></SearchBar>
         {showGrid && (
