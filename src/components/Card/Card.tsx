@@ -4,6 +4,7 @@ import avatarImage from "/public/avatar.png";
 import Link from "next/link";
 
 import { shimmer, toBase64 } from "@/utils/imageBlur";
+import { loremText } from "@/utils/loremText";
 
 const Card: React.FC<CardProps> = ({
   name,
@@ -30,7 +31,8 @@ const Card: React.FC<CardProps> = ({
         </h1>
 
         <p className="mb-3 font-normal text-gray-400 text-ellipsis line-clamp-3">
-          {mainText?.replace(/(<([^>]+)>)/gi, "") ?? ""}
+          {mainText == "" && loremText}
+          {mainText != "" ? mainText?.replace(/(<([^>]+)>)/gi, "") : ""}
         </p>
         <Link href={`${name}`}>
           <a

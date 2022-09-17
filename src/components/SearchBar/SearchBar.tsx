@@ -1,4 +1,4 @@
-import { SearchIcon } from "@/icons/SearchIcon";
+import { SearchIcon } from "@/components/icons/SearchIcon";
 import { SearchProps } from "./props";
 
 const SearchBar: React.FC<SearchProps> = ({

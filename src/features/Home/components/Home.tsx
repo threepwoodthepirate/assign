@@ -26,7 +26,6 @@ export const Home: NextPage<UsersProps> = ({ userList }) => {
     setQuery(queryValue ?? "");
   };
 
-  console.log(userList.length);
   return (
     <PageLayout>
       <div className="h-full">

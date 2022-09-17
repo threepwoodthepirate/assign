@@ -6,12 +6,12 @@ import PageLayout from "@/components/Layout/PageLayout";
 import Image from "next/image";
 import avatarImage from "/public/avatar.png";
 import { shimmer, toBase64 } from "@/utils/imageBlur";
-import { FacebookIcon } from "@/icons/FacebookIcon";
-import { TwitterIcon } from "@/icons/TwitterIcon";
-import { GithubIcon } from "@/icons/GithubIcon";
-import { YoutubeIcon } from "@/icons/YoutubeIcon";
+import { FacebookIcon } from "@/components/icons/FacebookIcon";
+import { TwitterIcon } from "@/components/icons/TwitterIcon";
+import { GithubIcon } from "@/components/icons/GithubIcon";
+import { YoutubeIcon } from "@/components/icons/YoutubeIcon";
+import { loremText } from "@/utils/loremText";
 export const User: NextPage<UserProp> = ({ user }) => {
-  console.log(user);
   const router = useRouter();
 
   return (
@@ -20,29 +20,42 @@ export const User: NextPage<UserProp> = ({ user }) => {
         <div className="absolute top-0 left-0 h-12 p-4 lg:top-6 lg:left-4 w-18">
           <Logo></Logo>
         </div>
-        <div className="flex flex-wrap items-center h-auto max-w-4xl mx-auto ">
+        <div className="flex flex-wrap h-auto max-w-4xl mx-auto ">
           <div
             id="profile"
             className="w-full mx-6 rounded-lg shadow-2xl opacity-75 lg:w-3/5 lg:rounded-lg bg-slate-700 border-slate-700 lg:mx-0"
           >
             <div className="p-4 text-center md:p-12 lg:text-left">
               <div className="block w-48 h-48 mx-auto -mt-16 bg-center bg-cover lg:hidden">
-                <Image
-                  width={50}
-                  height={50}
-                  alt="User image"
-                  src={avatarImage}
-                  layout="responsive"
-                  objectFit="cover"
-                  placeholder="blur"
-                  quality={100}
-                />
+                {user && (
+                  <Image
+                    width={50}
+                    height={50}
+                    alt="User image"
+                    src={
+                      user.imagePortraitUrl != null
+                        ? user.imagePortraitUrl
+                        : avatarImage
+                    }
+                    blurDataURL={`data:image/svg+xml;base64,${toBase64(
+                      shimmer(40, 100)
+                    )}`}
+                    className="rounded-lg"
+                    layout="responsive"
+                    objectFit="cover"
+                    placeholder="blur"
+                    quality={100}
+                  />
+                )}
               </div>
 
               <h1 className="pt-8 text-3xl font-bold lg:pt-0">{user?.name}</h1>
               <div className="w-4/5 pt-3 mx-auto border-b-2 opacity-25 lg:mx-0 border-slate-200"></div>
-              <p className="flex items-center justify-center pt-4 text-base font-bold lg:justify-start">
-                {user?.mainText ?? ""}
+              <p className="flex justify-center pt-4 text-base font-bold lg:justify-start">
+                {user?.mainText == "" && loremText}
+                {user?.mainText != ""
+                  ? user?.mainText?.replace(/(<([^>]+)>)/gi, "")
+                  : ""}
               </p>
 
               <p className="pt-8 text-sm text-white text-ellipsis line-clamp-3">
@@ -67,11 +80,12 @@ export const User: NextPage<UserProp> = ({ user }) => {
             </div>
           </div>
 
-          <div className="hidden w-full lg:w-2/5 lg:block">
+          <div className="hidden w-full pl-2 mt-8 lg:w-2/5 lg:block">
             {user && (
               <Image
                 width={50}
                 height={50}
+                className="rounded-lg"
                 alt="User image"
                 src={
                   user.imagePortraitUrl != null
