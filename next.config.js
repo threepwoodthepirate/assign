@@ -9,6 +9,9 @@ const nextConfig = {
   images: {
     domains: ["i.1337co.de"],
   },
+  experimental: {
+    scrollRestoration: true,
+  },
 };
 
 module.exports = nextConfig;
