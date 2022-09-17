@@ -15,6 +15,7 @@ const Card: React.FC<CardProps> = ({
       <Image
         width={50}
         height={50}
+        className="border-t rounded-t-lg"
         alt="User image"
         src={imagePortraitUrl != "" ? imagePortraitUrl : avatarImage}
         blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(40, 100))}`}

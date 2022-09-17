@@ -24,7 +24,7 @@ const ListCard: React.FC<ListCardProps> = ({
             )}`}
             layout="fixed"
             placeholder="blur"
-            quality={100}
+            quality={75}
           />
           <h3 className="mb-2 text-xl text-white">{name ?? "no name"}</h3>
           <p className="text-xs text-white line-clamp-3">

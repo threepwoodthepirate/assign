@@ -6,6 +6,10 @@ import PageLayout from "@/components/Layout/PageLayout";
 import Image from "next/image";
 import avatarImage from "/public/avatar.png";
 import { shimmer, toBase64 } from "@/utils/imageBlur";
+import { FacebookIcon } from "@/icons/FacebookIcon";
+import { TwitterIcon } from "@/icons/TwitterIcon";
+import { GithubIcon } from "@/icons/GithubIcon";
+import { YoutubeIcon } from "@/icons/YoutubeIcon";
 export const User: NextPage<UserProp> = ({ user }) => {
   console.log(user);
   const router = useRouter();
@@ -20,7 +24,48 @@ export const User: NextPage<UserProp> = ({ user }) => {
           <div
             id="profile"
             className="w-full mx-6 rounded-lg shadow-2xl opacity-75 lg:w-3/5 lg:rounded-lg bg-slate-700 border-slate-700 lg:mx-0"
-          ></div>
+          >
+            <div className="p-4 text-center md:p-12 lg:text-left">
+              <div className="block w-48 h-48 mx-auto -mt-16 bg-center bg-cover lg:hidden">
+                <Image
+                  width={50}
+                  height={50}
+                  alt="User image"
+                  src={avatarImage}
+                  layout="responsive"
+                  objectFit="cover"
+                  placeholder="blur"
+                  quality={100}
+                />
+              </div>
+
+              <h1 className="pt-8 text-3xl font-bold lg:pt-0">{user?.name}</h1>
+              <div className="w-4/5 pt-3 mx-auto border-b-2 opacity-25 lg:mx-0 border-slate-200"></div>
+              <p className="flex items-center justify-center pt-4 text-base font-bold lg:justify-start">
+                {user?.mainText ?? ""}
+              </p>
+
+              <p className="pt-8 text-sm text-white text-ellipsis line-clamp-3">
+                {user?.email}
+              </p>
+
+              <div className="flex flex-wrap items-center justify-between w-full pb-16 mx-auto mt-6 lg:pb-0 sm:max-w-xs">
+                <FacebookIcon />
+                <TwitterIcon />
+                <GithubIcon />
+                <YoutubeIcon />
+              </div>
+              <div className="pt-12 pb-1">
+                <button
+                  title={"Back"}
+                  onClick={() => router.back()}
+                  className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Back
+                </button>
+              </div>
+            </div>
+          </div>
 
           <div className="hidden w-full lg:w-2/5 lg:block">
             {user && (
