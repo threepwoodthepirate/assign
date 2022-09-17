@@ -3,6 +3,7 @@ import Image from "next/image";
 import avatarImage from "/public/avatar.png";
 import Link from "next/link";
 import { shimmer, toBase64 } from "@/utils/imageBlur";
+import { loremText } from "@/utils/loremText";
 
 const ListCard: React.FC<ListCardProps> = ({
   name,
@@ -28,6 +29,7 @@ const ListCard: React.FC<ListCardProps> = ({
           />
           <h3 className="mb-2 text-xl text-white">{name ?? "no name"}</h3>
           <p className="text-xs text-white line-clamp-3">
+            {!mainText && loremText}
             {mainText?.replace(/(<([^>]+)>)/gi, "") ?? "No description"}{" "}
           </p>
         </div>

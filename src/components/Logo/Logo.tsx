@@ -21,6 +21,7 @@ export const Logo: React.FC = (): JSX.Element => {
         fill="white"
       ></path>
       <path
+        className="animate-fadeIn"
         d="M48.0098 35L51.9917 33.8756V0L48.0098 1.09555V35Z"
         fill="rgb(5, 226, 115)"
       ></path>

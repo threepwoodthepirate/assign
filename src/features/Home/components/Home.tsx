@@ -52,6 +52,7 @@ export const Home: NextPage<UsersProps> = ({ userList }) => {
         {(!userFilteredList || userFilteredList.length == 0) && (
           <h3>Sorry, no users found. Try a different name.</h3>
         )}
+        {userList.length == 0 && <h3>Something unexpected happened..</h3>}
       </div>
     </PageLayout>
   );

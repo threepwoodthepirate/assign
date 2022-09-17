@@ -52,10 +52,10 @@ export const User: NextPage<UserProp> = ({ user }) => {
               <h1 className="pt-8 text-3xl font-bold lg:pt-0">{user?.name}</h1>
               <div className="w-4/5 pt-3 mx-auto border-b-2 opacity-25 lg:mx-0 border-slate-200"></div>
               <p className="flex justify-center pt-4 text-base font-bold lg:justify-start">
-                {user?.mainText == "" && loremText}
+                {!user?.mainText && loremText}
                 {user?.mainText != ""
                   ? user?.mainText?.replace(/(<([^>]+)>)/gi, "")
-                  : ""}
+                  : loremText}
               </p>
 
               <p className="pt-8 text-sm text-white text-ellipsis line-clamp-3">

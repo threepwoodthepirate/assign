@@ -11,6 +11,17 @@ module.exports = {
       fontFamily: {
         poppins: ["Poppins"],
       },
+      animation: {
+        fadeIn: "fadeIn 2.0s ease-in-out",
+      },
+      keyframes: {
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "40%": { opacity: "0" },
+          "60%": { opacity: "1" },
+          "100%": { opacity: "1" },
+        },
+      },
     },
   },
   plugins: [require("@tailwindcss/line-clamp")],
