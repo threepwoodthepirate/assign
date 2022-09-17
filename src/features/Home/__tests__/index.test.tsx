@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { server } from "@/mocks/server";
 import { userGetHandler, userHandlerEmpty } from "@/mocks/handlers/users";
-import Home from "./index";
+import Home from "../../../../pages/index";
 
 import { User } from "@/types/user";
 import { fetchUsers } from "@/lib/fetchUsers";
