@@ -1,6 +1,6 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-You can view the project at https://vercel.com/threepwoodthepirate/assign [here](https://vercel.com/threepwoodthepirate/assign)
+You can view the project at https://assign-delta.vercel.app [here](https://assign-delta.vercel.app)
 
 ## Getting Started
 
