@@ -12,13 +12,18 @@ module.exports = {
         poppins: ["Poppins"],
       },
       animation: {
-        fadeIn: "fadeIn 2.0s ease-in-out",
+        fadeInSlow: "fadeIn 2.0s ease-in-out",
+        fadeIn: "fadeIn 500ms ease-in-out",
       },
       keyframes: {
-        fadeIn: {
+        fadeInSlow: {
           "0%": { opacity: "0" },
           "40%": { opacity: "0" },
           "60%": { opacity: "1" },
+          "100%": { opacity: "1" },
+        },
+        fadeIn: {
+          "0%": { opacity: "0" },
           "100%": { opacity: "1" },
         },
       },
