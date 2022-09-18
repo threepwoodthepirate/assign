@@ -16,7 +16,7 @@ const SearchBar: React.FC<SearchProps> = ({
         disabled={disabled}
         onChange={handleSearch}
         name="search"
-        placeholder="Search by name.."
+        placeholder="Search by name or office.."
         className="w-full px-2 py-2 leading-6 transition duration-300 ease-in rounded-md text-md focus:outline-none bg-slate-700 text-gray-50 placeholder-slate-200"
       />
     </div>

@@ -1,7 +1,7 @@
 import { RefObject, useEffect, useState } from "react";
 
-export const useInView = (ref: RefObject<Element>) => {
-  const [isVisible, setIsVisible] = useState(false);
+export const useInView = (ref: RefObject<Element>, show: boolean = false) => {
+  const [isVisible, setIsVisible] = useState(show);
   useEffect(() => {
     const current = ref.current;
 

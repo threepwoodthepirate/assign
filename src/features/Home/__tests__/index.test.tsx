@@ -8,11 +8,24 @@ import { User } from "@/types/user";
 import { fetchUsers } from "@/lib/fetchUsers";
 
 describe("Home", () => {
+  beforeEach(() => {
+    // IntersectionObserver isn't available in test environment
+    const mockIntersectionObserver = jest.fn();
+    mockIntersectionObserver.mockReturnValue({
+      observe: () => null,
+      unobserve: () => null,
+      disconnect: () => null,
+    });
+    window.IntersectionObserver = mockIntersectionObserver;
+  });
+
   afterEach(() => {
     jest.restoreAllMocks();
   });
 
   it("renders a heading", async () => {
+    // const { result } = renderHook(() => useInView(null, true));
+
     server.use(userGetHandler);
     const data: User[] = await fetchUsers();
     const { container } = render(<Home userList={data} />);
@@ -58,3 +71,6 @@ describe("Home", () => {
     expect(matches.length).toEqual(1);
   });
 });
+function renderHook(arg0: () => any): { result: any } {
+  throw new Error("Function not implemented.");
+}

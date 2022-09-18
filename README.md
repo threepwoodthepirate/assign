@@ -2,33 +2,44 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+You'll need to create a file in the root directory of the project
+
+Filename: .env.local
+content of file should be
 
 ```bash
-npm run dev
-# or
+NEXT_PUBLIC_API_MOCKING=true
+API_URL="[your api url here]"
+API_KEY="[your api key here]"
+```
+
+Set NEXT_PUBLIC_API_MOCKING to true in case you doesn't have an api key. Then you should be able to run the project with mocked data.
+
+Run the development server:
+
+```bash
 yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+You can also build the project locally with 'yarn build' and view the project with 'npx next start -p 4000'.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Packages used
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+The project is using next.js to statically render the pages and fetching list of data in backend.
+Tailwind css for styling.
+mwsjs for mocking data.
+react-testing-library /jest for testing.
 
-## Learn More
+## User Stories
 
-To learn more about Next.js, take a look at the following resources:
+- Responsive design
+- Somewhat modern CSS w/ grid and clamp.
+- Filter by name and office.
+- Enable switch between grid and plain list.
+- Using TypeScript.
+- Integration test
+- Unit test
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Did also a publish to a public repo.

@@ -21,7 +21,7 @@ export const users = [
     name: "Ervin Howell",
     email: "Ervin.Howell@1337.tech",
     phoneNumber: "+46725133776",
-    office: "Lund",
+    office: "Stockholm",
     manager: "user.manager@1337.tech",
     orgUnit: "/Employees",
     mainText:
@@ -56,7 +56,7 @@ export const users = [
     name: "Patricia Lebsack",
     email: "Patricia.Lebsack@1337.tech",
     phoneNumber: "+46725133776",
-    office: "Lund",
+    office: "Stockholm",
     manager: "user.manager@1337.tech",
     orgUnit: "/Employees",
     mainText:
@@ -74,7 +74,7 @@ export const users = [
     name: "Chelsey Dietrich",
     email: "Chelsey.Dietrich@1337.tech",
     phoneNumber: "+46725133776",
-    office: "Lund",
+    office: "Stockholm",
     manager: "user.manager@1337.tech",
     orgUnit: "/Employees",
     mainText:
@@ -109,7 +109,7 @@ export const users = [
     name: "Nicholas Runolfsdottir",
     email: "Nicholas.Runolfsdottir@1337.tech",
     phoneNumber: "+46725133776",
-    office: "Lund",
+    office: "Helsingborg",
     manager: "user.manager@1337.tech",
     orgUnit: "/Employees",
     mainText:
@@ -145,7 +145,7 @@ export const users = [
     name: "Clementina.DuBuque",
     email: "Clementine.Bauch@1337.tech",
     phoneNumber: "+46725133776",
-    office: "Lund",
+    office: "Helsingborg",
     manager: "user.manager@1337.tech",
     orgUnit: "/Employees",
     mainText:
