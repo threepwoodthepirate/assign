@@ -9,8 +9,8 @@ const useFilter = (userList: User[], query: String) => {
   useEffect(() => {
     const foundItems = userList.filter(
       (item) =>
-        item.name.toLowerCase().includes(query.toLowerCase()) ||
-        item.office.toLowerCase().includes(query.toLowerCase())
+        item.name?.toLowerCase().includes(query.toLowerCase()) ||
+        item.office?.toLowerCase().includes(query.toLowerCase())
     );
     setUserFilteredList(foundItems);
   }, [query, userList]);

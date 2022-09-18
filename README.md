@@ -8,7 +8,7 @@ Filename: .env.local
 content of file should be
 
 ```bash
-NEXT_PUBLIC_API_MOCKING=true
+NEXT_PUBLIC_API_MOCKING=false
 API_URL="[your api url here]"
 API_KEY="[your api key here]"
 ```
